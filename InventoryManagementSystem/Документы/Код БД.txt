@@ -1,0 +1,39 @@
+create database inventory_managment_system_BD_GavrishM;
+
+create table categories (
+id int,
+category text
+);
+
+create table suppliers (
+id int,
+supplier text
+);
+
+create table options_for_selling (
+id int,
+option_for_selling text
+);
+
+create table storage_methods (
+id int,
+storage_method text
+);
+
+create table products (
+id int,
+name text,
+product_range text,
+category_id int,
+supplier_id int,
+option_for_selling_id int,
+storage_method_id int,
+foreign key (category_id)
+references categories (id),
+foreign key (supplier_id)
+references suppliers (id),
+foreign key (option_for_selling_id)
+references options_for_selling (id),
+foreign key (storage_method_id)
+references storage_methods (id)
+);
