@@ -37,3 +37,12 @@ references options_for_selling (id),
 foreign key (storage_method_id)
 references storage_methods (id)
 );
+
+create table products_is_in_stock (
+id int,
+product_id int,
+quantity_in_stock double,
+quantity_for_sale double,
+foreign key (product_id)
+references products (id)
+);
