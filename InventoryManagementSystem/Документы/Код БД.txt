@@ -2,22 +2,22 @@ create database inventory_managment_system_BD_GavrishM;
 
 create table categories (
 id int,
-category text
+name text
 );
 
 create table suppliers (
 id int,
-supplier text
+name text
 );
 
 create table options_for_selling (
 id int,
-option_for_selling text
+name text
 );
 
 create table storage_methods (
 id int,
-storage_method text
+name text
 );
 
 create table products (
