@@ -50,13 +50,11 @@ references products (id)
 );
 
 create table users (
-id int,
 login text,
 password text,
 name text,
 email text,
-phone text,
-role text
+phone text
 );
 
 create table log (
