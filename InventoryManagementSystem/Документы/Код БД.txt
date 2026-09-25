@@ -46,3 +46,13 @@ quantity_for_sale double,
 foreign key (product_id)
 references products (id)
 );
+
+create table users (
+id int,
+login text,
+password text,
+name text,
+email text,
+phone text,
+role text
+);
