@@ -7,7 +7,9 @@ name text
 
 create table suppliers (
 id int,
-name text
+name text,
+phone text,
+email text
 );
 
 create table options_for_selling (
