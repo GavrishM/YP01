@@ -1,29 +1,29 @@
 create database inventory_managment_system_BD_GavrishM;
 
 create table categories (
-id int,
+id int primary key,
 name text
 );
 
 create table suppliers (
-id int,
+id int primary key,
 name text,
 phone text,
 email text
 );
 
 create table options_for_selling (
-id int,
+id int primary key,
 name text
 );
 
 create table storage_methods (
-id int,
+id int primary key,
 name text
 );
 
 create table products (
-id int,
+id int primary key,
 name text,
 product_range text,
 category_id int,
@@ -41,16 +41,16 @@ references storage_methods (id)
 );
 
 create table products_is_in_stock (
-id int,
+id int primary key,
 product_id int,
-quantity_in_stock double,
-quantity_for_sale double,
+quantity_in_stock numeric(10, 3),
+quantity_for_sale numeric(10, 3),
 foreign key (product_id)
 references products (id)
 );
 
 create table users (
-login text,
+login text primary key,
 password text,
 name text,
 email text,
@@ -58,8 +58,8 @@ phone text
 );
 
 create table log (
-id int,
+id int primary key,
 product_id int,
 type text,
-quantity double
+quantity numeric(10, 3)
 );
