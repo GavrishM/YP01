@@ -41,17 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category.cs" />
+    <Compile Include="DBClasses\Category.cs" />
+    <Compile Include="DBConnection\DBConnection.cs" />
     <Compile Include="DBConnection\IUserRepository.cs" />
     <Compile Include="DBConnection\UserRepository.cs" />
-    <Compile Include="Log.cs" />
-    <Compile Include="OptionForSelling.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductIsInStock.cs" />
+    <Compile Include="DBClasses\Log.cs" />
+    <Compile Include="DBClasses\OptionForSelling.cs" />
+    <Compile Include="DBClasses\Product.cs" />
+    <Compile Include="DBClasses\ProductIsInStock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StorageMethod.cs" />
-    <Compile Include="Supplier.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="DBClasses\StorageMethod.cs" />
+    <Compile Include="DBClasses\Supplier.cs" />
+    <Compile Include="DBClasses\User.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

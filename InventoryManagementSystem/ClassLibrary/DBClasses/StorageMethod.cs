@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary
+namespace ClassLibrary.DBClasses
 {
-    public class Category
+    public class StorageMethod
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public Category(int id, string name)
+        public StorageMethod(int id, string name)
         {
             Id = id;
             Name = name;
