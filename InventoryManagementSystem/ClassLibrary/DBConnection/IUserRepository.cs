@@ -11,5 +11,7 @@ namespace ClassLibrary.DBConnection
     {
         bool CheckIfLoginExists(string login);
         bool AddUser(User user);
+        User GetUser(string login);
+        List<User> GetAllUsers();
     }
 }

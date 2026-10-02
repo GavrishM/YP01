@@ -27,6 +27,20 @@ namespace ClassLibrary.DBConnection
 
             return result;
         }
+        public User GetUser(string login)
+        {
+            User result = new User();
+
+            return result;
+        }
+        public List<User> GetAllUsers()
+        {
+            List<User> result = new List<User>();
+
+
+
+            return result;
+        }
     }
 }
 /*

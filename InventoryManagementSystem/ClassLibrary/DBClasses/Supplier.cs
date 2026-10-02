@@ -13,6 +13,7 @@ namespace ClassLibrary.DBClasses
         public string Phone { get; set; }
         public string Email { get; set; }
 
+        public Supplier() { }
         public Supplier(int id, string name)
         {
             Id = id;

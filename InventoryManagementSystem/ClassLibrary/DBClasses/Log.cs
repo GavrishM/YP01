@@ -13,6 +13,7 @@ namespace ClassLibrary.DBClasses
         public string Type { get; set; }
         public double Quantity { get; set; }
 
+        public Log() { }
         public Log(int id, Product product)
         {
             Id = id;

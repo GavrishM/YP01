@@ -14,6 +14,7 @@ namespace ClassLibrary.DBClasses
         public string Email { get; set; }
         public string Phone { get; set; }
 
+        public User() { }
         public User (string login,
                      string password)
         {

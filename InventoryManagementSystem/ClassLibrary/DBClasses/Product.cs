@@ -16,6 +16,7 @@ namespace ClassLibrary.DBClasses
         public OptionForSelling OptionForSelling { get; set; }
         public StorageMethod StorageMethod { get; set; }
 
+        public Product() { }
         public Product(int id, string name)
         {
             Id = id;

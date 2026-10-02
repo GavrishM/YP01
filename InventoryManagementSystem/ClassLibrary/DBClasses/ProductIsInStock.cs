@@ -14,6 +14,7 @@ namespace ClassLibrary.DBClasses
         public double QuantityInStock { get; set; }
         public double QuantityForSale { get; set; }
 
+        public ProductIsInStock() { }
         public ProductIsInStock(int id, Product product)
         {
             Id = id;

@@ -11,6 +11,7 @@ namespace ClassLibrary.DBClasses
         public int Id { get; set; }
         public string Name { get; set; }
 
+        public StorageMethod() { }
         public StorageMethod(int id, string name)
         {
             Id = id;
