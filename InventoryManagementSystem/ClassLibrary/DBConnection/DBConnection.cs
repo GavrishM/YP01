@@ -16,7 +16,7 @@ namespace ClassLibrary.DBConnection
         }
         public DBConnection()
         {
-            string filePath = "TestFile.txt";
+            string filePath = "Config.txt";
 
             try
             {

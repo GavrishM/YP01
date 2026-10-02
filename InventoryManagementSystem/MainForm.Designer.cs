@@ -33,6 +33,7 @@
             this.SignOutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.SignInToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.SignUpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.UserToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.MainToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             this.MainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SignUpToolStripButton,
             this.SignInToolStripButton,
+            this.UserToolStripLabel,
             this.SignOutToolStripButton});
             this.MainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.MainToolStrip.Name = "MainToolStrip";
@@ -73,6 +75,11 @@
             this.SignUpToolStripButton.Size = new System.Drawing.Size(139, 22);
             this.SignUpToolStripButton.Text = "Зарегистрироваться";
             // 
+            // UserToolStripLabel
+            // 
+            this.UserToolStripLabel.Name = "UserToolStripLabel";
+            this.UserToolStripLabel.Size = new System.Drawing.Size(0, 22);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +101,7 @@
         private System.Windows.Forms.ToolStripButton SignInToolStripButton;
         private System.Windows.Forms.ToolStripButton SignOutToolStripButton;
         private System.Windows.Forms.ToolStripButton SignUpToolStripButton;
+        private System.Windows.Forms.ToolStripLabel UserToolStripLabel;
     }
 }
 
