@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="DBConnection\IUserRepository.cs" />
+    <Compile Include="DBConnection\UserRepository.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="OptionForSelling.cs" />
     <Compile Include="Product.cs" />
