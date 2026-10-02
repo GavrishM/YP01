@@ -53,6 +53,8 @@
     <Compile Include="DBClasses\StorageMethod.cs" />
     <Compile Include="DBClasses\Supplier.cs" />
     <Compile Include="DBClasses\User.cs" />
+    <Compile Include="Validators\IUserValidator.cs" />
+    <Compile Include="Validators\UserValidator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

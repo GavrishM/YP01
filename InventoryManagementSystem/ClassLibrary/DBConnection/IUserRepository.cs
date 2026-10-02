@@ -10,8 +10,10 @@ namespace ClassLibrary.DBConnection
     public interface IUserRepository
     {
         bool CheckIfLoginExists(string login);
+        bool CheckPassword(string login, string password);
         bool AddUser(User user);
         User GetUser(string login);
         List<User> GetAllUsers();
+        
     }
 }
