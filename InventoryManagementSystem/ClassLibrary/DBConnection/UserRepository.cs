@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary.DBClasses;
+using System.Security.Cryptography;
 
 namespace ClassLibrary.DBConnection
 {
@@ -27,3 +29,13 @@ namespace ClassLibrary.DBConnection
         }
     }
 }
+/*
+string data = "Пример данных";
+SHA256 sha256 = SHA256.Create();
+byte dataBytes = Encoding.UTF8.GetBytes(data);
+byte hashBytes = sha256.ComputeHash(dataBytes); 
+
+// Преобразуем байтовый массив в строку для вывода
+string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
+Console.WriteLine(hashString);
+*/
