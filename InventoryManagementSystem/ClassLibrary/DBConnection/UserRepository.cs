@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.DBConnection
 {
-    internal class UserRepository
+    public class UserRepository : IUserRepository
     {
+
+        public bool CheckIfLoginExists(string login)
+        {
+            bool result = false;
+
+
+
+            return result;
+        }
+        public bool AddUser(User user)
+        {
+            bool result = false;
+
+
+
+            return result;
+        }
     }
 }
