@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.DBConnection
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
+        bool CheckIfLoginExists(string login);
+        bool AddUser(User user);
     }
 }
