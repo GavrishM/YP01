@@ -70,6 +70,7 @@
             this.UsersToolStripButton.Size = new System.Drawing.Size(89, 22);
             this.UsersToolStripButton.Text = "Пользователи";
             this.UsersToolStripButton.ToolTipText = "Пользователи";
+            this.UsersToolStripButton.Click += new System.EventHandler(this.UsersToolStripButton_Click);
             // 
             // SignInToolStripButton
             // 

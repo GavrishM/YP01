@@ -45,6 +45,7 @@
     <Compile Include="DBConnection\DBConnection.cs" />
     <Compile Include="DBConnection\IUserRepository.cs" />
     <Compile Include="DBConnection\UserRepository.cs" />
+    <Compile Include="Models\IUser.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\OptionForSelling.cs" />
     <Compile Include="Models\Product.cs" />

@@ -16,5 +16,11 @@ namespace InventoryManagementSystem
         {
             InitializeComponent();
         }
+
+        private void UsersToolStripButton_Click(object sender, EventArgs e)
+        {
+            UsersForm usersForm = new UsersForm();
+            usersForm.Show();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Models
 {
-    public class User
+    public class User : IUser
     {
         public string Login { get; set; }
         public string Password { get; set; }
