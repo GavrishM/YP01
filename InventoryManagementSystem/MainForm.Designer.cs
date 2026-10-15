@@ -50,10 +50,10 @@
             this.SuppliersToolStripButton,
             this.StorageMethodsToolStripButton,
             this.OptionsForSellingToolStripButton,
-            this.UsersToolStripButton,
+            this.SignOutToolStripButton,
             this.SignInToolStripButton,
-            this.UserToolStripLabel,
-            this.SignOutToolStripButton});
+            this.UsersToolStripButton,
+            this.UserToolStripLabel});
             this.MainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.MainToolStrip.Name = "MainToolStrip";
             this.MainToolStrip.Size = new System.Drawing.Size(800, 25);
@@ -62,6 +62,7 @@
             // 
             // UsersToolStripButton
             // 
+            this.UsersToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.UsersToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.UsersToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("UsersToolStripButton.Image")));
             this.UsersToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -72,6 +73,7 @@
             // 
             // SignInToolStripButton
             // 
+            this.SignInToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.SignInToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.SignInToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("SignInToolStripButton.Image")));
             this.SignInToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -87,6 +89,7 @@
             // 
             // SignOutToolStripButton
             // 
+            this.SignOutToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.SignOutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.SignOutToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("SignOutToolStripButton.Image")));
             this.SignOutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
