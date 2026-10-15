@@ -55,6 +55,7 @@
             this.UsersListBox.Name = "UsersListBox";
             this.UsersListBox.Size = new System.Drawing.Size(120, 423);
             this.UsersListBox.TabIndex = 0;
+            this.UsersListBox.SelectedIndexChanged += new System.EventHandler(this.UsersListBox_SelectedIndexChanged);
             // 
             // LoginLabel
             // 
@@ -69,6 +70,7 @@
             // LoginTextBox
             // 
             this.LoginTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LoginTextBox.Enabled = false;
             this.LoginTextBox.Location = new System.Drawing.Point(120, 13);
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(434, 20);
@@ -87,6 +89,7 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PasswordTextBox.Enabled = false;
             this.PasswordTextBox.Location = new System.Drawing.Point(120, 46);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(434, 20);
@@ -105,6 +108,7 @@
             // NameTextBox
             // 
             this.NameTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NameTextBox.Enabled = false;
             this.NameTextBox.Location = new System.Drawing.Point(120, 79);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(434, 20);
@@ -123,6 +127,7 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EmailTextBox.Enabled = false;
             this.EmailTextBox.Location = new System.Drawing.Point(120, 112);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(434, 20);
@@ -141,6 +146,7 @@
             // PhoneTextBox
             // 
             this.PhoneTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PhoneTextBox.Enabled = false;
             this.PhoneTextBox.Location = new System.Drawing.Point(120, 145);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(434, 20);
@@ -155,6 +161,7 @@
             this.DeleteButton.TabIndex = 11;
             this.DeleteButton.Text = "Удалить";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // CreateButton
             // 
@@ -165,6 +172,7 @@
             this.CreateButton.TabIndex = 12;
             this.CreateButton.Text = "Добавить";
             this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // UpdateButton
             // 
@@ -175,26 +183,31 @@
             this.UpdateButton.TabIndex = 13;
             this.UpdateButton.Text = "Редактировать";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // CancelButton
             // 
             this.CancelButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CancelButton.Enabled = false;
             this.CancelButton.Location = new System.Drawing.Point(120, 234);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(434, 23);
             this.CancelButton.TabIndex = 14;
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // SaveButton
             // 
             this.SaveButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SaveButton.Enabled = false;
             this.SaveButton.Location = new System.Drawing.Point(120, 257);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(434, 23);
             this.SaveButton.TabIndex = 15;
             this.SaveButton.Text = "Сохранить";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ReturnButton
             // 
@@ -205,6 +218,7 @@
             this.ReturnButton.TabIndex = 16;
             this.ReturnButton.Text = "Вернуться";
             this.ReturnButton.UseVisualStyleBackColor = true;
+            this.ReturnButton.Click += new System.EventHandler(this.ReturnButton_Click);
             // 
             // UsersForm
             // 
