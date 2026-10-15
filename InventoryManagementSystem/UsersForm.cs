@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.Models;
+using ClassLibrary.Validators;
 
 namespace InventoryManagementSystem
 {
@@ -15,6 +16,7 @@ namespace InventoryManagementSystem
     {
         private List<User> users_;
         private List<string> usersLogins_ = new List<string>();
+        private string saveButtonContext_ = ""; //Контекст кнопки SaveButton
         public UsersForm(List<User> users)
         {
             users_ = users;
@@ -46,6 +48,7 @@ namespace InventoryManagementSystem
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
+            saveButtonContext_ = "Create";
             LoginTextBox.Enabled = true;
             LoginTextBox.Text = "";
             PasswordTextBox.Enabled = true;
@@ -62,6 +65,7 @@ namespace InventoryManagementSystem
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
+            saveButtonContext_ = "Update";
             LoginTextBox.Enabled = true;
             PasswordTextBox.Enabled = true;
             NameTextBox.Enabled = true;
@@ -84,6 +88,15 @@ namespace InventoryManagementSystem
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            bool[] validationResults = new bool[6];
+            if (saveButtonContext_ == "Create")
+            {
+
+            }
+            if (saveButtonContext_ == "Update")
+            {
+
+            }
             LoginTextBox.Enabled = false;
             PasswordTextBox.Enabled = false;
             NameTextBox.Enabled = false;
