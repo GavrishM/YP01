@@ -14,7 +14,7 @@ namespace InventoryManagementSystem
     public partial class UsersForm : Form
     {
         private List<User> users_;
-        private List<string> usersLogins_;
+        private List<string> usersLogins_ = new List<string>();
         public UsersForm(List<User> users)
         {
             users_ = users;
@@ -26,7 +26,17 @@ namespace InventoryManagementSystem
 
         private void UsersListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            foreach(User user in users_)
+            {
+                if(user.Login == usersLogins_[UsersListBox.SelectedIndex])
+                {
+                    LoginTextBox.Text = user.Login;
+                    PasswordTextBox.Text = user.Password;
+                    NameTextBox.Text = user.Name;
+                    EmailTextBox.Text = user.Email;
+                    PhoneTextBox.Text = user.Phone;
+                }
+            }
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
