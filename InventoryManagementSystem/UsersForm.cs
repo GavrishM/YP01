@@ -95,7 +95,7 @@ namespace InventoryManagementSystem
 
         private void ReturnButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
