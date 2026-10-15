@@ -1,6 +1,6 @@
 ﻿namespace InventoryManagementSystem
 {
-    partial class RegistrationForm
+    partial class UsersForm
     {
         /// <summary>
         /// Required designer variable.

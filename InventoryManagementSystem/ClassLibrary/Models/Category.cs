@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary.DBClasses
+namespace ClassLibrary.Models
 {
-    public class OptionForSelling
+    public class Category
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public OptionForSelling() { }
-        public OptionForSelling(int id, string name)
+        public Category() { }
+        public Category(int id, string name)
         {
             Id = id;
             Name = name;
