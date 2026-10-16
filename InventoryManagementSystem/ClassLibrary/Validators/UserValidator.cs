@@ -79,11 +79,59 @@ namespace ClassLibrary.Validators
 
             return true;
         }
-        public bool ValidatePhone(string phone)
+        public bool ValidatePhone(string phone) //+7 (XXX) XXX-XX-XX
         {
-            bool result = true;
+            string alphabet = "0123456789";
+            string[] splited = phone.Split(' ');
 
-            return result;
+            if (splited.Length != 3)
+            { return false; }
+
+            if (splited[0] != "+7")
+            { return false; }
+
+            if (splited[1].Length != 5)
+            { return false; }
+            if ((splited[1][0] != '(') || (splited[1][4] != ')'))
+            {  return false; }
+
+            string temp = (splited[1][1] + splited[1][2] + splited[1][3]).ToString();
+            foreach(char c in temp)
+            {
+                if (alphabet.Contains(c) != true)
+                { return false; }
+            }
+
+            splited = splited[2].Split('-');
+
+            if (splited.Length != 3)
+            { return false; }
+
+            if (splited[0].Length != 3)
+            { return false; }
+            foreach (char c in splited[0])
+            {
+                if (alphabet.Contains(c) != true)
+                { return false; }
+            }
+
+            if (splited[1].Length != 2)
+            { return false; }
+            foreach (char c in splited[1])
+            {
+                if (alphabet.Contains(c) != true)
+                { return false; }
+            }
+
+            if (splited[2].Length != 2)
+            { return false; }
+            foreach (char c in splited[2])
+            {
+                if (alphabet.Contains(c) != true)
+                { return false; }
+            }
+
+            return true;
         }
         public bool ValidateAll(User user)
         {
