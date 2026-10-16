@@ -21,32 +21,63 @@ namespace ClassLibrary.Validators
         }
         public bool ValidateLogin(string login)
         {
-            bool result = true;
             if ((login.Length < 3) || (login.Length > 50))
-            { result = false; }
+            { return false; }
             if (Repository.CheckIfLoginExists(login))
-            { result = false; }
-            return result;
+            { return false; }
+            return true;
         }
 
         public bool ValidatePassword(string password)
         {
-            bool result = true;
             if ((password.Length < 6) || (password.Length > 100))
-            {  result = false; }
-            return result;
+            {  return false; }
+            return true;
         }
         public bool ValidateName(string name)
         {
-            bool result = true;
-
-            return result;
+            string alphabet = "ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ"
+                            + " qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+            if ((name.Length < 1))
+            {  return false; }
+            foreach (char c in name)
+            {
+                if (alphabet.Contains(c) != true)
+                {  return false; }
+            }
+            return true;
         }
-        public bool ValidateEmail(string email)
+        public bool ValidateEmail(string email) //имя@домен.зона
         {
-            bool result = true;
+            string alphabet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789";
+            string[] splited = alphabet.Split('@');
 
-            return result;
+            if (splited.Length != 2)
+            { return false; }
+
+            foreach(char c in splited[0])
+            {
+                if (alphabet.Contains(c) != true)
+                { return false; }
+            }
+
+            splited = splited[1].Split('.');
+
+            if (splited.Length != 2)
+            { return false; }
+
+            foreach (char c in splited[0])
+            {
+                if (alphabet.Contains(c) != true)
+                { return false; }
+            }
+            foreach (char c in splited[1])
+            {
+                if (alphabet.Contains(c) != true)
+                { return false; }
+            }
+
+            return true;
         }
         public bool ValidatePhone(string phone)
         {
