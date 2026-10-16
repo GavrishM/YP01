@@ -19,27 +19,26 @@ namespace ClassLibrary.Validators
             Connection = connection;
             Repository = userRepository;
         }
-        public string ValidateLogin(string login)
+        public bool ValidateLogin(string login)
         {
-            string result = "true";
-            if ((login == null) || (login == ""))
-            { result = "empty login"; }
+            bool result = true;
             if ((login.Length < 3) || (login.Length > 50))
-            { result = "incorect login length"; }
+            { result = false; }
             if (Repository.CheckIfLoginExists(login))
-            { result = "login exists"; }
+            { result = false; }
             return result;
         }
 
-        public string ValidatePassword(string password)
+        public bool ValidatePassword(string password)
         {
-            string result = "true";
-
+            bool result = true;
+            if ((password.Length < 6) || (password.Length > 100))
+            {  result = false; }
             return result;
         }
-        public string ValidateName(string name)
+        public bool ValidateName(string name)
         {
-            string result = "true";
+            bool result = true;
 
             return result;
         }

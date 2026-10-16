@@ -12,9 +12,9 @@ namespace ClassLibrary.Validators
     {
         DBConnection.DBConnection Connection { get; set; }
         IUserRepository Repository { get; set; }
-        string ValidateLogin(string login);
-        string ValidatePassword(string password);
-        string ValidateName(string name);
+        bool ValidateLogin(string login);
+        bool ValidatePassword(string password);
+        bool ValidateName(string name);
         bool ValidateEmail(string email);
         bool ValidatePhone(string phone);
         bool ValidateAll(User user);
