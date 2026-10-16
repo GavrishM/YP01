@@ -10,7 +10,11 @@ namespace ClassLibrary.DBConnection
 {
     public class UserRepository : IUserRepository
     {
-
+        public DBConnection Connection {  get; set; }
+        public UserRepository(DBConnection connection)
+        {
+            Connection = connection;
+        }
         public bool CheckIfLoginExists(string login)
         {
             bool result = false;

@@ -4,27 +4,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary.DBConnection;
+using System.Data.Common;
 
 namespace ClassLibrary.Validators
 {
     public class UserValidator : IUserValidator
     {
-        public bool ValidateLogin(string login)
-        {
-            bool result = true;
+        public DBConnection.DBConnection Connection {  get; set; }
+        public IUserRepository Repository {  get; set; }
 
+        public UserValidator(DBConnection.DBConnection connection, IUserRepository userRepository)
+        {
+            Connection = connection;
+            Repository = userRepository;
+        }
+        public string ValidateLogin(string login)
+        {
+            string result = "true";
+            if ((login == null) || (login == ""))
+            { result = "empty login"; }
+            if ((login.Length < 3) || (login.Length > 50))
+            { result = "incorect login length"; }
+            if (Repository.CheckIfLoginExists(login))
+            { result = "login exists"; }
             return result;
         }
 
-        public bool ValidatePassword(string password)
+        public string ValidatePassword(string password)
         {
-            bool result = true;
+            string result = "true";
 
             return result;
         }
-        public bool ValidateName(string fullName)
+        public string ValidateName(string name)
         {
-            bool result = true;
+            string result = "true";
 
             return result;
         }
