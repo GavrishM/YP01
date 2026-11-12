@@ -41,9 +41,11 @@ namespace ClassLibrary.DBConnection
             // Преобразуем байтовый массив в строку для вывода
             string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
             string codedPassword = hashString;
+            //Проверяем наличие пользователя и пароль
             if (CheckIfLoginExists(login))
             {
                 User user = GetUser(login);
+                //Если пароль верный то true
                 if (codedPassword == user.Password)
                 { return true; }
             }
@@ -51,6 +53,7 @@ namespace ClassLibrary.DBConnection
         }
         public bool AddUser(User user)
         {
+            //Если пользователь c таким логином присутствует то false
             if (CheckIfLoginExists(user.Login))
             { return false; }
             SHA256 sha256 = SHA256.Create();
@@ -60,11 +63,13 @@ namespace ClassLibrary.DBConnection
             // Преобразуем байтовый массив в строку для вывода
             string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
             user.Password = hashString;
+            //Добавляем пользователя в Users
             Users.Add(user);
             return true;
         }
         public bool UpdateUser(User user)
         {
+            //Если пользователь c таким логином отсутствует то false
             if (CheckIfLoginExists(user.Login) == false)
             { return false; }
             SHA256 sha256 = SHA256.Create();
@@ -74,6 +79,7 @@ namespace ClassLibrary.DBConnection
             // Преобразуем байтовый массив в строку для вывода
             string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
             user.Password = hashString;
+            //Обновляем пользователя в Users
             for (int i = 0; i < Users.Count; i++)
             {
                 if (user.Login == Users[i].Login)
@@ -84,6 +90,7 @@ namespace ClassLibrary.DBConnection
 
         public User GetUser(string login)
         {
+            //Ищем пользователя в Users
             User result = new User();
             foreach(User u in Users)
             {

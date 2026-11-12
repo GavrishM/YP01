@@ -1,2 +1,2 @@
-TRepository=true
+ARepository=true
 DBConnection=connection

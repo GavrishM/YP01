@@ -34,9 +34,11 @@ namespace ClassLibrary.DBConnection
             // Преобразуем байтовый массив в строку для вывода
             string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
             string codedPassword = hashString;
+            //Проверяем наличие пользователя и пароль
             if (CheckIfLoginExists(login))
             {
                 User user = GetUser(login);
+                //Если пароль верный то true
                 if (codedPassword == user.Password)
                 { return true; }
             }
@@ -44,6 +46,7 @@ namespace ClassLibrary.DBConnection
         }
         public bool AddUser(User user)
         {
+            //Если пользователь c таким логином присутствует то false
             if (CheckIfLoginExists(user.Login))
             { return false; }
             SHA256 sha256 = SHA256.Create();
@@ -53,12 +56,18 @@ namespace ClassLibrary.DBConnection
             // Преобразуем байтовый массив в строку для вывода
             string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
             user.Password = hashString;
+            //Если пользователь успешно добавлен в БД то добавляем пользователя в Users
             if (Connection.AddUser(user))
-            { Users.Add(user); return true; }
+            {
+                //Добавляем пользователя в Users
+                Users.Add(user);
+                return true;
+            }
             return false;
         }
         public bool UpdateUser(User user)
         {
+            //Если пользователь c таким логином отсутствует то false
             if (CheckIfLoginExists(user.Login) == false)
             { return false; }
             SHA256 sha256 = SHA256.Create();
@@ -68,8 +77,10 @@ namespace ClassLibrary.DBConnection
             // Преобразуем байтовый массив в строку для вывода
             string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
             user.Password = hashString;
+            //Если пользователь успешно обновлен в БД то обновляем пользователя в Users
             if (Connection.UpdateUser(user))
             {
+                //Обновляем пользователя в Users
                 for(int i = 0; i < Users.Count; i++)
                 {
                     if (user.Login == Users[i].Login)
@@ -81,6 +92,7 @@ namespace ClassLibrary.DBConnection
         }
         public User GetUser(string login)
         {
+            //Ищем пользователя в Users
             User result = new User();
             foreach(User u in Users)
             {
@@ -92,8 +104,6 @@ namespace ClassLibrary.DBConnection
         public List<User> GetAllUsers()
         {
             List<User> result = new List<User>();
-
-
             Users = result;
             return result;
         }
