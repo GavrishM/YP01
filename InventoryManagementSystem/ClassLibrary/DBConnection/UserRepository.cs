@@ -42,11 +42,16 @@ namespace ClassLibrary.DBConnection
         }
         public bool AddUser(User user)
         {
-            bool result = false;
-            string codedPassword = "";
+            SHA256 sha256 = SHA256.Create();
+            byte[] dataBytes = Encoding.UTF8.GetBytes(user.Password);
+            byte[] hashBytes = sha256.ComputeHash(dataBytes);
+
+            // Преобразуем байтовый массив в строку для вывода
+            string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
+            user.Password = hashString;
 
 
-            return result;
+            return false;
         }
         public User GetUser(string login)
         {
