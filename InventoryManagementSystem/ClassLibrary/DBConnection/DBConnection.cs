@@ -9,13 +9,9 @@ using ClassLibrary.Models;
 
 namespace ClassLibrary.DBConnection
 {
-    public class DBConnection
+    public class DBConnection : IDBConnection
     {
-        private readonly string connectionString_;
-        public string GetConnectionString()
-        {
-            return connectionString_;
-        }
+        public string ConnectionString {  get; set; }
         public DBConnection()
         {
             string filePath = "Config.txt";
@@ -31,7 +27,7 @@ namespace ClassLibrary.DBConnection
                     {
                         connectionLine = line.Split('=');
                         if (connectionLine[0] == "DBConnection")
-                        { connectionString_ = connectionLine[1]; }
+                        { ConnectionString = connectionLine[1]; }
                     }
                 }
             }
@@ -45,7 +41,7 @@ namespace ClassLibrary.DBConnection
                 }
             }
         }
-        public bool AddUser(IUser user)
+        public bool AddUser(User user)
         {
             bool result = false;
 
@@ -53,13 +49,20 @@ namespace ClassLibrary.DBConnection
 
             return result;
         }
-        public bool UpdateUser(IUser user)
+        public bool UpdateUser(User user)
         {
             bool result = false;
 
 
 
             return result;
+        }
+        public bool DeleteUser(string login)
+        {
+
+
+
+            return false;
         }
         public User GetUser(string login)
         {

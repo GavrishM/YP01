@@ -84,7 +84,31 @@ namespace ClassLibrary.DBConnection
                 for(int i = 0; i < Users.Count; i++)
                 {
                     if (user.Login == Users[i].Login)
-                    { Users[i] = user; }
+                    {
+                        Users[i] = user;
+                        break;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+        public bool DeleteUser(string login)
+        {
+            //Если пользователь c таким логином отсутствует то false
+            if (CheckIfLoginExists(login) == false)
+            { return false; }
+            //Если пользователь успешно удален из БД то удаляем пользователя из Users
+            if (Connection.DeleteUser(login))
+            {
+                //Удаляем пользователя из Users
+                for (int i = 0; i < Users.Count; i++)
+                {
+                    if (login == Users[i].Login)
+                    {
+                        Users.RemoveAt(i);
+                        break;
+                    }
                 }
                 return true;
             }
