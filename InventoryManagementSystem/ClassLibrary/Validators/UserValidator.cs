@@ -135,9 +135,23 @@ namespace ClassLibrary.Validators
         }
         public bool ValidateAll(User user)
         {
-            bool result = true;
-
-            return result;
+            bool temp = true;
+            temp = ValidateLogin(user.Login);
+            if (temp == false)
+            { return false; }
+            temp = ValidatePassword(user.Password);
+            if (temp == false)
+            { return false; }
+            temp = ValidateName(user.Name);
+            if (temp == false)
+            { return false; }
+            temp = ValidateEmail(user.Email);
+            if (temp == false)
+            { return false; }
+            temp = ValidatePhone(user.Phone);
+            if (temp == false)
+            { return false; }
+            return true;
         }
     }
 }
