@@ -17,11 +17,11 @@ namespace ClassLibrary.DBConnection
         }
         public bool CheckIfLoginExists(string login)
         {
-            bool result = false;
-
-
-
-            return result;
+            User user = new User();
+            user = GetUser(login);
+            if (user.Login!=login)
+            { return false; }
+            return true;
         }
         public bool CheckPassword(string login, string password)
         {
