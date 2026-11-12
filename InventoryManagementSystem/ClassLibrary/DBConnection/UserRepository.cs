@@ -11,7 +11,7 @@ namespace ClassLibrary.DBConnection
     public class UserRepository : IUserRepository
     {
         public DBConnection Connection {  get; set; }
-        private List<User> users_ = new List<User>();
+        public List<User> Users { get; set; }
         public UserRepository(DBConnection connection)
         {
             Connection = connection;
@@ -53,13 +53,13 @@ namespace ClassLibrary.DBConnection
             user.Password = hashString;
 
 
-            users_.Add(user);
+            Users.Add(user);
             return false;
         }
         public User GetUser(string login)
         {
             User result = new User();
-            foreach(User u in users_)
+            foreach(User u in Users)
             {
                 if (u.Login == login)
                 { result = u; break; }
@@ -71,7 +71,7 @@ namespace ClassLibrary.DBConnection
             List<User> result = new List<User>();
 
 
-            users_ = result;
+            Users = result;
             return result;
         }
     }
