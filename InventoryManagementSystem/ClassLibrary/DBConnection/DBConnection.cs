@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary.Models;
 
 namespace ClassLibrary.DBConnection
 {
@@ -42,6 +44,37 @@ namespace ClassLibrary.DBConnection
                     writer.WriteLine(e);
                 }
             }
+        }
+        public bool AddUser(IUser user)
+        {
+            bool result = false;
+
+
+
+            return result;
+        }
+        public bool UpdateUser(IUser user)
+        {
+            bool result = false;
+
+
+
+            return result;
+        }
+        public User GetUser(string login)
+        {
+            User result = new User();
+
+
+
+            return result;
+        }
+        public List<User> GetAllUsers()
+        {
+            List<User> users = new List<User>();
+
+
+            return users;
         }
     }
 }

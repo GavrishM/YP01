@@ -62,6 +62,15 @@ namespace ClassLibrary.DBConnection
 
             return false;
         }
+        public bool UpdateUser(User user)
+        {
+            bool result = false;
+
+
+
+            return result;
+        }
+
         public User GetUser(string login)
         {
             User result = new User();

@@ -14,6 +14,7 @@ namespace ClassLibrary.DBConnection
         bool CheckIfLoginExists(string login);
         bool CheckPassword(string login, string password);
         bool AddUser(User user);
+        bool UpdateUser(User user);
         User GetUser(string login);
         List<User> GetAllUsers();
         
