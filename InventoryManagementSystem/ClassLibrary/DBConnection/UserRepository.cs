@@ -44,6 +44,8 @@ namespace ClassLibrary.DBConnection
         }
         public bool AddUser(User user)
         {
+            if (CheckIfLoginExists(user.Login))
+            { return false; }
             SHA256 sha256 = SHA256.Create();
             byte[] dataBytes = Encoding.UTF8.GetBytes(user.Password);
             byte[] hashBytes = sha256.ComputeHash(dataBytes);
@@ -51,18 +53,31 @@ namespace ClassLibrary.DBConnection
             // Преобразуем байтовый массив в строку для вывода
             string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
             user.Password = hashString;
-
-
-            Users.Add(user);
+            if (Connection.AddUser(user))
+            { Users.Add(user); return true; }
             return false;
         }
         public bool UpdateUser(User user)
         {
-            bool result = false;
+            if (CheckIfLoginExists(user.Login) == false)
+            { return false; }
+            SHA256 sha256 = SHA256.Create();
+            byte[] dataBytes = Encoding.UTF8.GetBytes(user.Password);
+            byte[] hashBytes = sha256.ComputeHash(dataBytes);
 
-
-
-            return result;
+            // Преобразуем байтовый массив в строку для вывода
+            string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
+            user.Password = hashString;
+            if (Connection.UpdateUser(user))
+            {
+                for(int i = 0; i < Users.Count; i++)
+                {
+                    if (user.Login == Users[i].Login)
+                    { Users[i] = user; }
+                }
+                return true;
+            }
+            return false;
         }
         public User GetUser(string login)
         {

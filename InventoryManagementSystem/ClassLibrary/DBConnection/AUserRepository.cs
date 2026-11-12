@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.DBConnection
 {
-    public class TUserRepository : IUserRepository
+    public class AUserRepository : IUserRepository
     {
         public DBConnection Connection { get; set; }
         public List<User> Users { get; set; }
-        public TUserRepository(/*DBConnection connection*/)
+        public AUserRepository(/*DBConnection connection*/)
         {
             //Connection = connection;
             Users.Add( new User("login1", "password1", "name1", "email1", "phone1") );
@@ -51,6 +51,8 @@ namespace ClassLibrary.DBConnection
         }
         public bool AddUser(User user)
         {
+            if (CheckIfLoginExists(user.Login))
+            { return false; }
             SHA256 sha256 = SHA256.Create();
             byte[] dataBytes = Encoding.UTF8.GetBytes(user.Password);
             byte[] hashBytes = sha256.ComputeHash(dataBytes);
@@ -58,17 +60,26 @@ namespace ClassLibrary.DBConnection
             // Преобразуем байтовый массив в строку для вывода
             string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
             user.Password = hashString;
-
-
-            return false;
+            Users.Add(user);
+            return true;
         }
         public bool UpdateUser(User user)
         {
-            bool result = false;
+            if (CheckIfLoginExists(user.Login) == false)
+            { return false; }
+            SHA256 sha256 = SHA256.Create();
+            byte[] dataBytes = Encoding.UTF8.GetBytes(user.Password);
+            byte[] hashBytes = sha256.ComputeHash(dataBytes);
 
-
-
-            return result;
+            // Преобразуем байтовый массив в строку для вывода
+            string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
+            user.Password = hashString;
+            for (int i = 0; i < Users.Count; i++)
+            {
+                if (user.Login == Users[i].Login)
+                { Users[i] = user; }
+            }
+            return true;
         }
 
         public User GetUser(string login)
