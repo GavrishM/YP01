@@ -25,11 +25,20 @@ namespace ClassLibrary.DBConnection
         }
         public bool CheckPassword(string login, string password)
         {
-            bool result = false;
-            string codedPassword = "";
+            SHA256 sha256 = SHA256.Create();
+            byte[] dataBytes = Encoding.UTF8.GetBytes(password);
+            byte[] hashBytes = sha256.ComputeHash(dataBytes);
 
-
-            return result;
+            // Преобразуем байтовый массив в строку для вывода
+            string hashString = BitConverter.ToString(hashBytes).Replace("-", "");
+            string codedPassword = hashString;
+            if (CheckIfLoginExists(login))
+            {
+                User user = GetUser(login);
+                if (codedPassword == user.Password)
+                { return true; }
+            }
+            return false;
         }
         public bool AddUser(User user)
         {
