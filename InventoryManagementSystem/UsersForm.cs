@@ -33,7 +33,7 @@ namespace InventoryManagementSystem
             {
                 if(user.Login == usersLogins_[UsersListBox.SelectedIndex])
                 {
-                    selectedUser_.LoginNotNull();
+                    selectedUser_ = user;
                     LoginTextBox.Text = user.Login;
                     PasswordTextBox.Text = user.Password;
                     NameTextBox.Text = user.Name;

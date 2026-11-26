@@ -90,8 +90,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Anser.cs" />
     <Compile Include="DBConnection\AUserRepository.cs" />
     <Compile Include="DBConnection\IDBConnection.cs" />
+    <Compile Include="FileReader.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="DBConnection\DBConnection.cs" />
     <Compile Include="DBConnection\IUserRepository.cs" />
