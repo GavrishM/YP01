@@ -17,6 +17,7 @@ namespace InventoryManagementSystem
         private List<User> users_;
         private List<string> usersLogins_ = new List<string>();
         private string saveButtonContext_ = ""; //Контекст кнопки SaveButton
+        private User selectedUser_ = new User();
         public UsersForm(List<User> users)
         {
             users_ = users;
@@ -32,6 +33,7 @@ namespace InventoryManagementSystem
             {
                 if(user.Login == usersLogins_[UsersListBox.SelectedIndex])
                 {
+                    selectedUser_.LoginNotNull();
                     LoginTextBox.Text = user.Login;
                     PasswordTextBox.Text = user.Password;
                     NameTextBox.Text = user.Name;
@@ -43,7 +45,13 @@ namespace InventoryManagementSystem
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-
+            if (selectedUser_.LoginNotNull())
+            {
+            }
+            else
+            {
+                MessageBox.Show("Пользователь не выбран!");
+            }
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
@@ -65,14 +73,21 @@ namespace InventoryManagementSystem
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            saveButtonContext_ = "Update";
-            LoginTextBox.Enabled = true;
-            PasswordTextBox.Enabled = true;
-            NameTextBox.Enabled = true;
-            EmailTextBox.Enabled = true;
-            PhoneTextBox.Enabled = true;
-            CancelButton.Enabled = true;
-            SaveButton.Enabled = true;
+            if (selectedUser_.LoginNotNull())
+            {
+                saveButtonContext_ = "Update";
+                LoginTextBox.Enabled = true;
+                PasswordTextBox.Enabled = true;
+                NameTextBox.Enabled = true;
+                EmailTextBox.Enabled = true;
+                PhoneTextBox.Enabled = true;
+                CancelButton.Enabled = true;
+                SaveButton.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Пользователь не выбран!");
+            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

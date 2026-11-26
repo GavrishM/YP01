@@ -10,7 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ClassLibrary.DBConnection
@@ -69,7 +69,7 @@ namespace ClassLibrary.DBConnection
             }
             catch (NpgsqlException ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                //MessageBox.Show($"Error: {ex.Message}");
                 return false;
             }
         }
@@ -96,7 +96,7 @@ namespace ClassLibrary.DBConnection
             }
             catch (NpgsqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
                 return false;
             }
         }
@@ -119,7 +119,7 @@ namespace ClassLibrary.DBConnection
             }
             catch (NpgsqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
                 return false;
             }
         }
@@ -147,7 +147,7 @@ namespace ClassLibrary.DBConnection
             }
             catch (NpgsqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
 
 
@@ -181,7 +181,7 @@ namespace ClassLibrary.DBConnection
             }
             catch (NpgsqlException ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                //MessageBox.Show($"Error: {ex.Message}");
             }
             return users;
         }

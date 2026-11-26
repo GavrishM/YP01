@@ -13,5 +13,6 @@ namespace ClassLibrary.Models
         string Name { get; set; }
         string Email { get; set; }
         string Phone { get; set; }
+        bool LoginNotNull();
     }
 }

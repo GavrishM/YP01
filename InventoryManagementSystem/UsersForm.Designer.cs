@@ -53,7 +53,7 @@
             this.UsersListBox.FormattingEnabled = true;
             this.UsersListBox.Location = new System.Drawing.Point(0, 0);
             this.UsersListBox.Name = "UsersListBox";
-            this.UsersListBox.Size = new System.Drawing.Size(120, 423);
+            this.UsersListBox.Size = new System.Drawing.Size(120, 311);
             this.UsersListBox.TabIndex = 0;
             this.UsersListBox.SelectedIndexChanged += new System.EventHandler(this.UsersListBox_SelectedIndexChanged);
             // 
@@ -214,7 +214,7 @@
             this.ReturnButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReturnButton.Location = new System.Drawing.Point(120, 280);
             this.ReturnButton.Name = "ReturnButton";
-            this.ReturnButton.Size = new System.Drawing.Size(434, 143);
+            this.ReturnButton.Size = new System.Drawing.Size(434, 31);
             this.ReturnButton.TabIndex = 16;
             this.ReturnButton.Text = "Вернуться";
             this.ReturnButton.UseVisualStyleBackColor = true;
@@ -224,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 423);
+            this.ClientSize = new System.Drawing.Size(554, 311);
             this.Controls.Add(this.ReturnButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CancelButton);

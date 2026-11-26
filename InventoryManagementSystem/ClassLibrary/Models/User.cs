@@ -33,5 +33,12 @@ namespace ClassLibrary.Models
             Email = email;
             Phone = phone;
         }
+        public bool LoginNotNull()
+        {
+            if (Login != null && Login != "")
+            {  return true; }
+            else
+            { return false; }
+        }
     }
 }
